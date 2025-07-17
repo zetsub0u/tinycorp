@@ -123,9 +123,9 @@ spec:
       serviceAccountName: code-server
       volumes:
       - name: data
-        persistentVolumeClaim:
-          claimName: code-server
----
+        hostPath:
+          path: /data/code # directory location on host
+          type: Directory # this field is optional
 # Source: code-server/templates/secrets.yaml
 apiVersion: v1
 kind: Secret
