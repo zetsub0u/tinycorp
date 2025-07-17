@@ -1,6 +1,7 @@
+namespace: argocd
 resources:
-  - ../upstream/install.yaml
+  - upstream
   - repo-sealed.yaml
 
 patches:
-  - argocd-cm.yaml
+  - path: argocd-cm.yaml
