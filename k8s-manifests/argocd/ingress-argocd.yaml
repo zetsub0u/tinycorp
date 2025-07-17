@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd 
+  namespace: argocd 
+  annotations:
+    cert-manager.io/cluster-issuer: zetsudev-issuer
+    external-dns.alpha.kubernetes.io/hostname: argocd.zetsu.dev
+spec:
+  ingressClassName: contour
+  tls:
+  - hosts:
+    - argocd.zetsu.dev 
+    secretName: argocd-tls
+  rules:
+  - host: argocd.zetsu.dev
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server 
+            port:
+              name: https
