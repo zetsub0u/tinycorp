@@ -1,0 +1,18 @@
+config:
+  spec:
+    destination:
+      server: https://kubernetes.default.svc
+    source:
+      repoURL: git@github.com:zetsub0u/tinycorp.git
+      targetRevision: master
+
+applications:
+  - name: sealed-secrets
+    path: k8s-manifests/sealed-secrets 
+  - name: argocd
+    path: k8s-manifests/argocd
+  #- name: omized-helm
+  #  path: plugins/kustomized-helm
+  #  tool:
+  #    plugin:
+  #      name: kustomized-helm

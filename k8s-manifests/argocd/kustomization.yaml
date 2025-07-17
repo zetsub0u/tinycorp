@@ -1,0 +1,6 @@
+resources:
+  - ../upstream/install.yaml
+  - repo-sealed.yaml
+
+patches:
+  - argocd-cm.yaml
