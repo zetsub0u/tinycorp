@@ -2,3 +2,4 @@ namespace: code-server
 
 resources:
   - code-server.yaml
+  - ingress.yaml
