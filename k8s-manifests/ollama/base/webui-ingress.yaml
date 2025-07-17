@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: open-webui-ingress
+  namespace: open-webui
+  annotations:
+    cert-manager.io/cluster-issuer: zetsudev-issuer
+    external-dns.alpha.kubernetes.io/hostname: ollama.zetsu.dev
+spec:
+  ingressClassName: public
+  rules:
+  - host: ollama.zetsu.dev
+    http:
+      paths:
+      - backend:
+          service:
+            name: open-webui-service 
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - ollama.zetsu.dev
+    secretName: ollama-tls
