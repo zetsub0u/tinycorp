@@ -6,6 +6,8 @@ metadata:
     kubernetes.io/ingress.class: contour
     cert-manager.io/cluster-issuer: zetsudev-issuer
     external-dns.alpha.kubernetes.io/hostname: code.zetsu.dev
+    ingress.kubernetes.io/tls-minimum-version: "1.2"
+    projectcontour.io/websocket-routes: /
 spec:
   ingressClassName: contour
   tls:
