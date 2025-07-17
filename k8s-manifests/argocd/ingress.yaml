@@ -4,8 +4,10 @@ metadata:
   name: argocd 
   namespace: argocd 
   annotations:
+    kubernetes.io/ingress.class: contour
     cert-manager.io/cluster-issuer: zetsudev-issuer
     external-dns.alpha.kubernetes.io/hostname: argocd.zetsu.dev
+    ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   ingressClassName: contour
   tls:
@@ -22,4 +24,4 @@ spec:
           service:
             name: argocd-server 
             port:
-              name: https
+              name: httpsi
