@@ -1,0 +1,3 @@
+resources:
+  - crds/bitnami.com_sealedsecrets.yaml
+  - sealed-secrets.yaml

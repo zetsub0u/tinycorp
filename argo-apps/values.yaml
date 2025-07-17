@@ -8,9 +8,8 @@ config:
 
 applications:
   - name: sealed-secrets
-    path: k8s-manifests/sealed-secrets 
   - name: argocd
-    path: k8s-manifests/argocd
+  - name: code-server
   #- name: omized-helm
   #  path: plugins/kustomized-helm
   #  tool:
