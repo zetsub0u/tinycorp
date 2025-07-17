@@ -10,6 +10,8 @@ applications:
   - name: sealed-secrets
   - name: argocd
   - name: code-server
+  - name: metallb
+    namespace: metallb-system
   #- name: omized-helm
   #  path: plugins/kustomized-helm
   #  tool:
