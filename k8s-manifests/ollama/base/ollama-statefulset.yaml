@@ -31,8 +31,8 @@ spec:
         - name: ollama-volume
           mountPath: /root/.ollama
         tty: true
-  volumes:
-  - name: ollama-volume 
-    hostPath:
-      path: /ollama
-      type: Directory # this field is optional
+      volumes:
+        - name: ollama-volume 
+          hostPath:
+            path: /ollama
+            type: Directory # this field is optional
