@@ -10,7 +10,7 @@ data:
           "authentication": {
             "api_token": "${CF_DDNS_API_TOKEN}"
           },
-          "zone_id": "zetsu.dev",
+          "zone_id": "5ffe5836337d86ee33960f38e91d3354",
           "subdomains": [
             {
               "name": "home",
