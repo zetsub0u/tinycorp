@@ -12,3 +12,7 @@ applications:
   - name: code-server
   - name: metallb
   - name: ollama
+  - name: contour
+    namespace: projectcontour
+  - name: ddns
+    namespace: kube-system

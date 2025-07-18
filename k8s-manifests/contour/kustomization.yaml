@@ -1,0 +1,5 @@
+namespace: projectcontour
+
+resources:
+  - https://raw.githubusercontent.com/projectcontour/contour/release-1.32/examples/render/contour.yaml
+  
