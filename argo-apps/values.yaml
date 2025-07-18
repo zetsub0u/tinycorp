@@ -22,3 +22,4 @@ applications:
   - name: ddns
     namespace: kube-system
   - name: cert-manager
+  - name: gpu-operator
