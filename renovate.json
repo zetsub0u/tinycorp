@@ -1,9 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:base"
   ],
+  "kubernetes": {
+    "fileMatch": ["\\.yaml$"]
+  },
   "argocd": {
-    "managerFilePatterns": ["/k8s-manifests/.+\\.yaml$/"]
-  }
+    "fileMatch": ["\\.yaml$"]
+  },
+  "enabledManagers": ["kubernetes", "argocd", "kustomize"]
 }
