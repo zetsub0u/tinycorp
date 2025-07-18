@@ -93,7 +93,7 @@ spec:
           mountPath: /home/coder
       containers:
         - name: code-server
-          image: "codercom/code-server:4.102.0"
+          image: "codercom/code-server:4.102.1"
           imagePullPolicy: Always
           securityContext:
             runAsUser: 1000
