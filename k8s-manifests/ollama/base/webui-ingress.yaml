@@ -6,6 +6,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: zetsudev-issuer
     external-dns.alpha.kubernetes.io/hostname: ollama.zetsu.dev
+    projectcontour.io/websocket-routes: /
 spec:
   ingressClassName: contour
   rules:
