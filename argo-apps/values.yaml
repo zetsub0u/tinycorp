@@ -21,4 +21,4 @@ applications:
           - /spec/preserveUnknownFields
   - name: ddns
     namespace: kube-system
-    
+  - name: cert-manager
