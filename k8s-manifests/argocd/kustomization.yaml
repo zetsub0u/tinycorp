@@ -1,9 +1,13 @@
 namespace: argocd
 resources:
-  - upstream
+  - github.com/argoproj/argo-cd//manifests/cluster-install?ref=v3.0.11 
   - repo-sealed.yaml
   - ingress.yaml
 
 patches:
   - path: argocd-cm.yaml
+    target:
+      namespace: argocd
   - path: argocd-cmd-params-cm.yaml
+    target:
+      namespace: argocd
