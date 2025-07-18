@@ -1,0 +1,8 @@
+helmCharts:
+- name: gpu-operator
+  includeCRDs: true
+  version: v25.3.1
+  repo: https://helm.ngc.nvidia.com/nvidia
+
+resources:
+  - namespace.yaml
