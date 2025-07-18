@@ -26,5 +26,8 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  {{ if .ignoreDifferences }}
+    {{ . | toYaml | nindent 4 }}
+  {{ end }}
 ---
 {{ end -}}
