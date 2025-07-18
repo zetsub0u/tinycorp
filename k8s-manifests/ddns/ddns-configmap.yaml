@@ -8,14 +8,14 @@ data:
       "cloudflare": [
         {
           "authentication": {
-            "api_token": "${CF_DDNS_API_TOKEN}",
+            "api_token": "${CF_DDNS_API_TOKEN}"
           },
           "zone_id": "zetsu.dev",
           "subdomains": [
             {
               "name": "home",
               "proxied": false
-            },
+            }
           ]
         }
       ],
