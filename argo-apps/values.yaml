@@ -23,3 +23,4 @@ applications:
     namespace: kube-system
   - name: cert-manager
   - name: gpu-operator
+  - name: observability
