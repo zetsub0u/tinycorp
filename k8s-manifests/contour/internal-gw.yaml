@@ -25,6 +25,9 @@ metadata:
   namespace: projectcontour
   name: contour-internal
 spec:
+  contour:
+    deployment:
+      replicas: 1
   runtimeSettings:
     ingress:
       classNames:
