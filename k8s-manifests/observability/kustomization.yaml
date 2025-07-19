@@ -5,6 +5,18 @@ helmCharts:
   releaseName: monitoring
   includeCRDs: true
   valuesInline:
+    grafana:
+      ingress:
+        enabled: true
+        annotations:
+          cert-manager.io/cluster-issuer: zetsudev-issuer
+          external-dns.alpha.kubernetes.io/hostname: grafana.zetsu.dev
+        hosts:
+          - grafana.zetsu.dev
+        tls:
+          - hosts:
+            - grafana.zetsu.dev 
+            secretName: grafana-tls
     prometheusOperator:
       tls:
         enabled: false
