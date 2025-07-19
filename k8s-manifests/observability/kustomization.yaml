@@ -7,6 +7,12 @@ helmCharts:
   includeCRDs: true
   valuesInline:
     namespaceOverride: observability
+    prometheus:
+      prometheusSpec:
+        storageSpec:
+          hostPath:
+            path: /data/k8s-volumes/prometheus-0 # directory location on host
+            type: Directory # this field is optional
     grafana:
       ingress:
         enabled: true
