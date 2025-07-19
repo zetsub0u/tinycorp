@@ -4,4 +4,12 @@ helmCharts:
 - name: kube-prometheus-stack
   releaseName: monitoring
   includeCRDs: true
+  valuesInline:
+    prometheusOperator:
+      tls:
+        enabled: true
+    admissionWebhooks:
+      enabled: true
+      certManager:
+        enabled: true
   repo: https://prometheus-community.github.io/helm-charts
