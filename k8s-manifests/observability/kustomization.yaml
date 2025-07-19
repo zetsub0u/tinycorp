@@ -2,9 +2,11 @@ namespace: observability
 
 helmCharts:
 - name: kube-prometheus-stack
+  namespace: observability
   releaseName: monitoring
   includeCRDs: true
   valuesInline:
+    namespaceOverride: observability
     grafana:
       ingress:
         enabled: true
