@@ -24,3 +24,4 @@ applications:
   - name: cert-manager
   - name: gpu-operator
   - name: observability
+    serverSideApply: true
