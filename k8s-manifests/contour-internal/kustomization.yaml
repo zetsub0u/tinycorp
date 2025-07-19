@@ -1,0 +1,13 @@
+namespace: contour-internal
+
+helmCharts:
+- name: contour
+  namespace: contour-internal
+  releaseName: internal
+  includeCRDs: true
+  valuesInline:
+    contour:
+      ingressClass:
+        name: contour-internal
+  version: "21.0.11"
+  repo: https://charts.bitnami.com/bitnami

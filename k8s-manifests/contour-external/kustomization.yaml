@@ -1,0 +1,14 @@
+namespace: contour-external
+
+helmCharts:
+- name: contour
+  namespace: contour-external
+  releaseName: external
+  includeCRDs: false # managed in internal
+  valuesInline:
+    contour:
+      ingressClass:
+        name: contour-external
+        default: false
+  version: "21.0.11"
+  repo: https://charts.bitnami.com/bitnami

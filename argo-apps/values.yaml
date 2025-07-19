@@ -12,8 +12,13 @@ applications:
   - name: code-server
   - name: metallb
   - name: ollama
-  - name: contour
-    namespace: projectcontour
+  - name: contour-internal
+    ignoreDifferences:
+      - group: apiextensions.k8s.io
+        kind: CustomResourceDefinition
+        jsonPointers:
+          - /spec/preserveUnknownFields
+  - name: contour-external
     ignoreDifferences:
       - group: apiextensions.k8s.io
         kind: CustomResourceDefinition
