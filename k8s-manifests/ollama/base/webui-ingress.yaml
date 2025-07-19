@@ -8,7 +8,7 @@ metadata:
     external-dns.alpha.kubernetes.io/hostname: ollama.zetsu.dev
     projectcontour.io/websocket-routes: /
 spec:
-  ingressClassName: contour
+  ingressClassName: contour-internal
   rules:
   - host: ollama.zetsu.dev
     http:
