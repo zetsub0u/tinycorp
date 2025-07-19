@@ -3,12 +3,12 @@ kind: Ingress
 metadata:
   name: code-server 
   annotations:
-    kubernetes.io/ingress.class: contour-external
+    #kubernetes.io/ingress.class: contour-internal
     cert-manager.io/cluster-issuer: zetsudev-issuer
     external-dns.alpha.kubernetes.io/hostname: code.zetsu.dev
     projectcontour.io/websocket-routes: /
 spec:
-  ingressClassName: contour-external
+  ingressClassName: contour-internal
   tls:
   - hosts:
     - code.zetsu.dev 
