@@ -10,9 +10,16 @@ helmCharts:
     prometheus:
       prometheusSpec:
         storageSpec:
-          hostPath:
-            path: /data/k8s-volumes/prometheus-0 # directory location on host
-            type: Directory # this field is optional
+          volumeClaimTemplate:
+            spec:
+              accessModes: ["ReadWriteOnce"]
+              resources:
+                requests:
+                  storage: 50Gi
+              selector: {}
+          #hostPath:
+          #  path: /data/k8s-volumes/prometheus-0 # directory location on host
+          #  type: Directory # this field is optional
     grafana:
       ingress:
         enabled: true
