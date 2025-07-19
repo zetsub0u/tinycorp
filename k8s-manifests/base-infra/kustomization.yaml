@@ -1,0 +1,5 @@
+namespace: kube-system
+
+resources:
+  - cloudflare-api-key-sealed.yaml
+  - nas-ingress.yaml

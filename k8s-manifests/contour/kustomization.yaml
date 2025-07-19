@@ -1,5 +1,7 @@
 namespace: projectcontour
 
 resources:
-  - https://raw.githubusercontent.com/projectcontour/contour/release-1.32/examples/render/contour.yaml
+  - https://raw.githubusercontent.com/projectcontour/contour/release-1.32/examples/render/contour-gateway-provisioner.yaml
+  - external-gw.yaml
+  - internal-gw.yaml
   

@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: safe
+spec:
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      name: http
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: safe
+subsets:
+  - addresses:
+      - ip: 192.168.1.140
+    ports:
+      - port: 5000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: code-server 
+  annotations:
+    kubernetes.io/ingress.class: contour
+    cert-manager.io/cluster-issuer: zetsudev-issuer
+    external-dns.alpha.kubernetes.io/hostname: safe.zetsu.dev
+    projectcontour.io/websocket-routes: /
+spec:
+  ingressClassName: contour
+  tls:
+  - hosts:
+    - safe.zetsu.dev 
+    secretName: code-server-tls
+  rules:
+  - host: safe.zetsu.dev
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: safe
+            port:
+              name: http 

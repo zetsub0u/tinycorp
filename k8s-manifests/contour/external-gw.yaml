@@ -1,0 +1,38 @@
+kind: GatewayClass
+apiVersion: gateway.networking.k8s.io/v1
+metadata:
+  name: contour-external
+spec:
+  controllerName: projectcontour.io/gateway-controller
+---
+kind: ContourDeployment
+apiVersion: projectcontour.io/v1alpha1
+metadata:
+  namespace: projectcontour
+  name: contour-external
+spec:
+  runtimeSettings:
+    ingress:
+      classNames:
+        - contour-external
+---
+kind: Gateway
+apiVersion: gateway.networking.k8s.io/v1
+metadata:
+  name: contour-external
+  namespace: projectcontour
+spec:
+  gatewayClassName: contour-external
+  listeners:
+    - name: http
+      protocol: HTTP
+      port: 80
+      allowedRoutes:
+        namespaces:
+          from: All
+    - name: https
+      protocol: HTTPS
+      port: 443
+      allowedRoutes:
+        namespaces:
+          from: All
