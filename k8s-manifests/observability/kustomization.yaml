@@ -7,7 +7,7 @@ helmCharts:
   valuesInline:
     prometheusOperator:
       tls:
-        enabled: true
+        enabled: false
     admissionWebhooks:
       enabled: true
       certManager:
